@@ -7,7 +7,12 @@ const getOG = require("../Utilities/getOGProperty");
 const isValidLink = require("../Utilities/validLink");
 
 const linkPreview = async (req, res, next) => {
-  const link = req.body.link;
+  let link = req.body.link;
+
+  if (!link) {
+    link = req.query?.url;
+  }
+  ze4r;
 
   try {
     if (!link) {
