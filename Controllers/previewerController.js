@@ -36,7 +36,9 @@ const linkPreview = async (req, res, next) => {
     // Image...
     let image = getOG(html, "image", "content");
     // Absolute Path handling ...
-    image = absolutePath(link, image);
+    if (image) {
+      image = absolutePath(link, image);
+    }
 
     //Site name ...
     const sitename = getOG(html, "site_name", "content");
@@ -53,7 +55,9 @@ const linkPreview = async (req, res, next) => {
 
     //favicon ...
     let favicon = html("link[rel=icon]").attr("href");
-    favicon = absolutePath(link, favicon);
+    if (favicon) {
+      favicon = absolutePath(link, favicon);
+    }
 
     res.status(200).json({
       success: true,
