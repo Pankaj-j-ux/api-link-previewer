@@ -12,7 +12,6 @@ const linkPreview = async (req, res, next) => {
   if (!link) {
     link = req.query?.url;
   }
-  ze4r;
 
   try {
     if (!link) {
