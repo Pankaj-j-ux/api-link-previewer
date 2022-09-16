@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const cors = require("cors");
 const morgan = require("morgan");
-const previewRouter = require("./Routes/linkPreviewer");
+const previewRouter = require("./Routes/index");
 
 // EXPRESS APP INITIALIZED
 const app = express();
